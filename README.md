@@ -18,8 +18,7 @@ virtualization or other less than ideal setups.
 
 ### Other Considerations
 #### Dependencies
-Built using the fabulous [pipenv](https://github.com/kennethreitz/pipenv) from Kenneith Reitz. 
-However, a `requirements.txt` is also included.
+A `requirements.txt` is included. Builds require Beautiful Soup and lxml for max performance.
 
 #### Python Version Support
 Supports Python 3 only.

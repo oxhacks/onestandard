@@ -1,6 +1,6 @@
 """Utility to convert OneNote notebooks into Markdown."""
 
-
+import logging
 from collections import OrderedDict, namedtuple
 from html import unescape
 
@@ -61,7 +61,11 @@ def get_notes(soup, note_style=NOTE_STYLE):
         style = str(note.get('style'))
         if style == note_style:
             note = note.find('div')
-            title, headers, content = extract_parts(note)
+            try:
+                title, headers, content = extract_parts(note)
+            except ValueError:
+                logging.warning('Could not parse note: %s', note.get_text())
+                continue
             yield title, headers, content
 
 

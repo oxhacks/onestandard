@@ -1,3 +1,5 @@
+"""Utility script to process notes from the command line."""
+
 import sys
 import os
 
